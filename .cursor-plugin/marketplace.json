@@ -12,7 +12,7 @@
       "name": "mastercard-developers",
       "source": "./providers/cursor/plugin/",
       "description": "Mastercard Developers",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "author": {
         "name": "Mastercard"
       }

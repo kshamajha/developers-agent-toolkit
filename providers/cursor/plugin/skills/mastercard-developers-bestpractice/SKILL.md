@@ -3,7 +3,7 @@ name: mastercard-developers-bestpractice
 description: Best practices for AI agents using the Mastercard Developers platform
 metadata:
   author: mastercard-developers
-  version: "1.0"
+  version: "1.0.0"
   audience: api-integration-agents
 ---
 

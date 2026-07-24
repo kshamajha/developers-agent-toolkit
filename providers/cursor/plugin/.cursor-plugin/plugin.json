@@ -1,7 +1,7 @@
 {
   "name": "mastercard-developers",
   "description": "Mastercard Developers plugin for Cursor to help build integrations with Mastercard APIs, including best practices and the Mastercard Developers MCP server.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": {
     "name": "Mastercard",
     "url": "https://developer.mastercard.com"

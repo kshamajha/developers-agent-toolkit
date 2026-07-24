@@ -1,6 +1,6 @@
 {
   "name": "mastercard-developers",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Mastercard Developers plugin for Codex to help build integrations with Mastercard APIs, including best practices and the Mastercard Developers MCP server.",
   "author": {
     "name": "Mastercard",

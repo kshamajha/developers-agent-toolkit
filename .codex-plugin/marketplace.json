@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "mastercard-developers",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "source": {
         "source": "git-subdir",
         "url": "https://github.com/Mastercard/developers-agent-toolkit.git",

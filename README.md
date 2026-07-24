@@ -83,6 +83,8 @@ For more details, checkout [typescript](typescript/README.md) directory
 
 If you use one of these harnesses, we recommend installing the plugin, which includes the MCP server and updates automatically.
 
+> **Note:** The curated marketplace commands below (`@claude-plugins-official`, `@openai-curated`, and the Cursor slash command) work once the plugin is accepted into each vendor's registry. Until then, use the GitHub-based install shown under [Install from this repository](#install-from-this-repository).
+
 ### Claude Code
 
 ```bash
@@ -106,7 +108,25 @@ codex plugin add mastercard-developers@openai-curated
 > Manually installed skills don't auto-update. Run `npx skills update -y` to get the latest versions.
 
 ```bash
-npx skills add https://developer.mastercard.com/llms.txt
+npx skills add Mastercard/developers-agent-toolkit
+```
+
+### Install from this repository
+
+Before the plugins are listed in the curated marketplaces, you can install
+directly from this GitHub repository.
+
+**Claude Code** — add this repo as a marketplace, then install:
+
+```bash
+claude plugin marketplace add Mastercard/developers-agent-toolkit
+claude plugin install mastercard-developers@mastercard-developers
+```
+
+**Skills only** (any supported agent) — install the skill straight from the repo:
+
+```bash
+npx skills add Mastercard/developers-agent-toolkit
 ```
 
 Plugin sources live under [`providers/`](providers/), and the marketplace manifests are `.claude-plugin/marketplace.json`, `.codex-plugin/marketplace.json`, and `.cursor-plugin/marketplace.json`.
