@@ -77,6 +77,61 @@ main().catch((error) => {
 
 For more details, checkout [typescript](typescript/README.md) directory
 
+## Agent Plugins
+
+[Agent skills](https://agentskills.io/home) are instructions that agents can use to build faster and more accurately. This repository provides official plugins that bundle the `mastercard-developers-bestpractice` skill together with the Mastercard Developers MCP server for popular agent harnesses.
+
+If you use one of these harnesses, we recommend installing the plugin, which includes the MCP server and updates automatically.
+
+### Claude Code
+
+```bash
+claude plugin install mastercard-developers@claude-plugins-official
+```
+
+### Codex
+
+```bash
+codex plugin add mastercard-developers@openai-curated
+```
+
+### Cursor
+
+```bash
+/add-plugin mastercard-developers
+```
+
+### Manual installation
+
+> Manually installed skills don't auto-update. Run `npx skills update -y` to get the latest versions.
+
+```bash
+npx skills add https://developer.mastercard.com/llms.txt
+```
+
+Plugin sources live under [`providers/`](providers/), and the marketplace manifests are `.claude-plugin/marketplace.json`, `.codex-plugin/marketplace.json`, and `.cursor-plugin/marketplace.json`.
+
+### Editing skills
+
+The [`skills/`](skills/) directory at the repository root is the **single source of truth** for every agent skill (for example `mastercard-developers-bestpractice`). Each provider under `providers/*/plugin/skills/` holds a synchronized copy — do not edit those copies directly.
+
+To update a skill:
+
+1. Edit the canonical file under `skills/` (e.g. `skills/mastercard-developers-bestpractice/SKILL.md`).
+2. Run the sync script from the repository root to propagate the change to every provider:
+
+   ```bash
+   node scripts/sync.js
+   ```
+
+To verify (without writing) that the provider copies match the canonical source — useful in CI or a pre-commit hook — run:
+
+```bash
+node scripts/sync.js --check
+```
+
+This exits non-zero if any provider skill is missing or out of sync.
+
 ## Contributing
 
 Contributions are welcome. Please feel free to submit a pull request or open an issue to report a bug or suggest a feature.
