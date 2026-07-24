@@ -42,3 +42,8 @@ See the [top-level README](../../../README.md) for install commands. For Codex:
 ```bash
 codex plugin add mastercard-developers@openai-curated
 ```
+
+> **Note:** The `@openai-curated` command works once this plugin is accepted
+> into OpenAI's curated registry. Until then, install directly from this
+> repository as described in the
+> [top-level README](../../../README.md#install-from-this-repository).
