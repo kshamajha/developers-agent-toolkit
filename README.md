@@ -116,14 +116,14 @@ npx skills add Mastercard/developers-agent-toolkit
 Before the plugins are listed in the curated marketplaces, you can install
 directly from this GitHub repository.
 
-**Claude Code** — add this repo as a marketplace, then install:
+**Claude Code** - add this repo as a marketplace, then install:
 
 ```bash
 claude plugin marketplace add Mastercard/developers-agent-toolkit
 claude plugin install mastercard-developers@mastercard-developers
 ```
 
-**Skills only** (any supported agent) — install the skill straight from the repo:
+**Skills only** (any supported agent) - install the skill straight from the repo:
 
 ```bash
 npx skills add Mastercard/developers-agent-toolkit
@@ -133,7 +133,7 @@ Plugin sources live under [`providers/`](providers/), and the marketplace manife
 
 ### Editing skills
 
-The [`skills/`](skills/) directory at the repository root is the **single source of truth** for every agent skill (for example `mastercard-developers-bestpractice`). Each provider under `providers/*/plugin/skills/` holds a synchronized copy — do not edit those copies directly.
+The [`skills/`](skills/) directory at the repository root is the **single source of truth** for every agent skill (for example `mastercard-developers-bestpractice`). Each provider under `providers/*/plugin/skills/` holds a synchronized copy - do not edit those copies directly.
 
 To update a skill:
 
@@ -144,7 +144,7 @@ To update a skill:
    node scripts/sync.js
    ```
 
-To verify (without writing) that the provider copies match the canonical source — useful in CI or a pre-commit hook — run:
+To verify (without writing) that the provider copies match the canonical source - useful in CI or a pre-commit hook - run:
 
 ```bash
 node scripts/sync.js --check
