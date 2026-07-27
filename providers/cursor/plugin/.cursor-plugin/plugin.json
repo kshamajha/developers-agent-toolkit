@@ -11,9 +11,14 @@
   "license": "MIT",
   "keywords": [
     "mastercard",
+    "mastercard-developers",
     "payments",
     "api",
     "open-banking",
-    "integration"
+    "open-finance",
+    "integration",
+    "mcp",
+    "modelcontextprotocol",
+    "agent-toolkit"
   ]
 }
