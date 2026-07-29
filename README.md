@@ -131,6 +131,39 @@ npx skills add Mastercard/developers-agent-toolkit
 
 Plugin sources live under [`providers/`](providers/), and the marketplace manifests are `.claude-plugin/marketplace.json`, `.codex-plugin/marketplace.json`, and `.cursor-plugin/marketplace.json`.
 
+### Using the skill
+
+Once the plugin (or MCP server) is installed, just prompt your agent in
+plain language. The skill guides the agent to call the Mastercard
+Developers MCP tools instead of relying on training data.
+
+Try a prompt like:
+
+```text
+Using the Mastercard Developers tools, list the available services,
+then show me the API operations for the Mastercard Locations API and
+explain how to authenticate with OAuth 1.0a.
+```
+
+![Prompting the agent with the Mastercard Developers skill](.github/assets/md-prompt.jpg)
+
+Results will include the service list, the API operations for the Locations API,
+and details about the OAuth 1.0a integration:
+
+![Service list and Locations API operations returned by the agent](.github/assets/md-prompt-output1.jpg)
+
+![OAuth 1.0a integration details returned by the agent](.github/assets/md-prompt-output2.jpg)
+
+Behind the scenes the agent chains the MCP tools to answer this, for example:
+
+1. `get-services-list` - discover available Mastercard products/services.
+2. `get-api-operation-list` - list operations for the chosen service's spec.
+3. `get-documentation-page` - discover the correct swagger spec path.
+4. `get-oauth10a-integration-guide` - pull the official authentication guide.
+
+You don't call these tools directly - just describe your goal and the
+agent selects the right tools.
+
 ### Editing skills
 
 The [`skills/`](skills/) directory at the repository root is the **single source of truth** for every agent skill (for example `mastercard-developers-bestpractice`). Each provider under `providers/*/plugin/skills/` holds a synchronized copy - do not edit those copies directly.
